@@ -3,12 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Randomfo"
              x:Class="Randomfo.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="bgColor">navy</Color>
+            <Color x:Key="textColor">white</Color>
+        </ResourceDictionary>
+         
+    </ContentPage.Resources>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <Grid Padding="20" RowSpacing="0" ColumnSpacing="0" BackgroundColor="{DynamicResource bgColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="didUKnowLabel" Grid.Row="0" Margin="50" Text="Did you know:" TextColor="{DynamicResource textColor}" FontSize="32" HorizontalOptions="CenterAndExpand" />
+        <Label x:Name="factsLabel" Grid.Row="2" Text="Random Info" FontSize="32" TextColor="{DynamicResource textColor}" HorizontalOptions="CenterAndExpand"/>
+
+        <Button x:Name="randomInfoButton" Grid.Row="3" Margin="0,0,0,20" Text="Press For Random Fact" Clicked="RandomInfoButton_Clicked" HorizontalOptions="CenterAndExpand"/>
+    </Grid>
+    
+
+
 
 </ContentPage>
